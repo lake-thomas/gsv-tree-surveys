@@ -21,4 +21,4 @@ The `/tree_detection` folder houses scripts to apply a pre-trained object detect
 The `/tree_geolocation` folder contains scripts that integrate detection and classification models into a workflow. This workflow triangulates and assigns geolocation coordinates to street trees.
 
 ![Example Tree Detection](https://github.com/ncsu-landscape-dynamics/gsv_host_detector/blob/main/yolov5-prediction-sample-tree.jpg?raw=true)
-# gsv2
+
