@@ -1,6 +1,6 @@
 # Tree Classification
 
-The `tree_classification` module provides scripts for preprocessing data, training a Convolutional Neural Network (CNN), and evaluating the performance of the model specifically designed for host tree classification.
+The `tree_classification` module provides scripts for preprocessing data, training CNN models, and evaluating host tree genus classification performance.
 
 ## Folder Structure
 
@@ -22,23 +22,23 @@ Notes: files named with *_hpc are for running on a high performance compute (HPC
 ## Usage
 
 ### 1. Export Python Path
-Ensure the Python path is set to the parent directory of the `tree_classification` folder. For example:
-export PYTHONPATH=$PYTHONPATH:/path/to/parent_directory
+Ensure the Python path is set to the parent directory of the repository modules:
+`export PYTHONPATH=$PYTHONPATH:/path/to/parent_directory`
 
-### 2. Activate Conda Environment
-source activate my_env
+### 2. Activate Environment
+`source activate my_env`
 
 ### 3. Modify Config File
 Specify experiment name, model training and evaluation parameters, tree genera, and output paths.
 
-### 3. Preprocess Data and Train the Model
-python -m tree_classification.train --config "/path/to/train_config.json"
+### 4. Train the Model
+`python -m tree_classification.train --config "/path/to/train_config.json"`
 
-### 4. Evaluate the Model
-python -m tree_classification.evaluate --config "/path/to/eval_config.json"
+### 5. Evaluate the Model
+`python -m tree_classification.evaluate --config "/path/to/eval_config.json"`
 
 ### Additional Information
-For detailed information on model performance and other analyses, refer to the Jupyter notebooks and R markdown files available in the jupyter_notebooks and r_markdowns directories, respectively.
+For detailed analyses, refer to `jupyter_notebooks/` and `r_markdowns/`.
 
 ### Geopriors
-The `/geopriors` directory contains exploratory analyses to modify CNN predictions based on prior information about exisitng tree genera in a geographic region.
+The `/geopriors` directory contains exploratory analyses to modify CNN predictions based on prior information about existing tree genera in a geographic region.
