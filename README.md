@@ -1,24 +1,28 @@
 # Host Tree Detection and Classification with Google Street View
 
-This repository contains code for detecting and classifying host trees using Google Street View imagery. The project consists of four main components:
+This repository contains code for detecting, classifying, and geolocating trees using Google Street View imagery.
 
-## Image Downloaders
+## Citation
 
-The `/image_downloaders` folder contains tools for obtaining two types of images:
-- iNaturalist host tree images
-- Google Street View panoramic images
+If you use this repository, please cite:
 
-## Tree Classification
+Lake et al., 2026. Continental-scale computer vision models reveal generalizable patterns and pitfalls for urban tree inventories with street-view images, *ISPRS Open Journal of Photogrammetry and Remote Sensing*, 10.1016/j.ophoto.2026.100122.
 
-In the `/tree_classification` folder, you'll find scripts for developing and evaluating a convolutional neural network (CNN) tailored for host tree classification.
+## Reproducible Workflow
 
-## Tree Detection
+1. Install dependencies from `/requirements.txt`.
+2. Download imagery with `/image_downloaders`.
+3. Detect trees in panoramic imagery with `/tree_detection`.
+4. Classify detected trees with `/tree_classification`.
+5. Geolocate trees with `/tree_geolocation`.
+6. Compare with city inventory records in `/tree_inventory`.
 
-The `/tree_detection` folder houses scripts to apply a pre-trained object detection model (YOLOv5) to identify trees in Google Street View panoramic images.
+## Repository Structure
 
-## Tree Geolocation
-
-The `/tree_geolocation` folder contains scripts that integrate detection and classification models into a workflow. This workflow triangulates and assigns geolocation coordinates to street trees.
+- `/image_downloaders`: Download iNaturalist and Google Street View images.
+- `/tree_detection`: YOLOv5-based object detection resources for tree detection.
+- `/tree_classification`: CNN training and evaluation for host tree classification.
+- `/tree_geolocation`: Integrated detection/classification/depth workflow for geolocating trees.
+- `/tree_inventory`: Scripts for matching model outputs with city inventory records.
 
 ![Example Tree Detection](https://github.com/ncsu-landscape-dynamics/gsv_host_detector/blob/main/yolov5-prediction-sample-tree.jpg?raw=true)
-
