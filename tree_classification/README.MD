@@ -23,19 +23,19 @@ Notes: files named with *_hpc are for running on a high performance compute (HPC
 
 ### 1. Export Python Path
 Ensure the Python path is set to the parent directory of the `tree_classification` folder. For example:
-export PYTHONPATH=$PYTHONPATH:/path/to/parent_directory
+`export PYTHONPATH=$PYTHONPATH:/path/to/parent_directory`
 
 ### 2. Activate Conda Environment
-source activate my_env
+`source activate my_env`
 
 ### 3. Modify Config File
 Specify experiment name, model training and evaluation parameters, tree genera, and output paths.
 
-### 3. Preprocess Data and Train the Model
-python -m tree_classification.train --config "/path/to/train_config.json"
+### 4. Preprocess Data and Train the Model
+`python -m tree_classification.train --config "/path/to/train_config.json"`
 
-### 4. Evaluate the Model
-python -m tree_classification.evaluate --config "/path/to/eval_config.json"
+### 5. Evaluate the Model
+`python -m tree_classification.evaluate --config "/path/to/eval_config.json"`
 
 ### Additional Information
 For detailed information on model performance and other analyses, refer to the Jupyter notebooks and R markdown files available in the jupyter_notebooks and r_markdowns directories, respectively.

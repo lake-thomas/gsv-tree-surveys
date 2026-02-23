@@ -20,13 +20,13 @@ In the `/r_scripts` directory, you will find the following key scripts and confi
 
 ### 1. Export Python Path
 Ensure the Python path is set to the parent directory of the `image_downloaders` folder. For example:
-export PYTHONPATH=$PYTHONPATH:/path/to/parent_directory
+`export PYTHONPATH=$PYTHONPATH:/path/to/parent_directory`
 
 ### 2. Activate Conda Environment
-source activate my_env
+`source activate my_env`
 
 ### 3. Modify Config File
-Specify experiment name, path to API key, and locations for downloading.
+Specify experiment name, path to API key, and locations for downloading in `downloader_config_csv.json`.
 
-### 3. Run the downloader
-python -m image_downloaders.get_panos_and_metadata_async_csv --config "/path/to/train_config.json"
+### 4. Run the downloader
+`python -m image_downloaders.get_panos_and_metadata_async_csv --config "/path/to/downloader_config_csv.json"`
