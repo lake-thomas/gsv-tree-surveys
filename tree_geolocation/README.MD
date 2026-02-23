@@ -1,6 +1,6 @@
 # Tree Geolocation
 
-The 'tree_geolocation' module provides Python scripts to apply tree object detection (YOLOv5) and image classification (CNN), and depth estimate (ZoeDepth) models to geolocate street trees from Google Street View imagery.
+The `tree_geolocation` module provides scripts that combine tree detection (YOLOv5), classification (CNN), and depth estimation to geolocate street trees from Google Street View imagery.
 
 ## Files
 
@@ -9,16 +9,14 @@ The 'tree_geolocation' module provides Python scripts to apply tree object detec
 - **geoutilities.py**: Python function library to load models, process imagery, apply model predictions, and geolocate trees.
 - **/jupyter_notebooks**: Notebooks to experiment with tree geolocation workflows.
 
-# Usage
+## Usage
 
-# Export Python Path to Parent Directory of Tree_Geolocation Folder
-Ex in Bash; export PYTHONPATH=$PYTHONPATH:/path/to/parent/directory
+1. Export Python path to the repository parent directory:
+   - `export PYTHONPATH=$PYTHONPATH:/path/to/parent/directory`
 
-# Load Conda Environment with Torch
-source activate my_env
+2. Activate your environment with required dependencies.
 
-# Inspect geolocation_config.json File to Specify Training Parameters
+3. Update `geolocation_config.json` with model paths, image paths, and output options.
 
-# Run Train.py to Train CNN
-python -m tree_geolocation.geolocate --config "path\to\geolocation_config.json"
-
+4. Run geolocation:
+   - `python -m tree_geolocation.geolocate --config "/path/to/geolocation_config.json"`

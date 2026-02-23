@@ -1,24 +1,36 @@
 # Host Tree Detection and Classification with Google Street View
 
-This repository contains code for detecting and classifying host trees using Google Street View imagery. The project consists of four main components:
+This repository contains workflows for detecting, classifying, and geolocating urban trees from Google Street View (GSV) imagery.
 
-## Image Downloaders
+## Repository Structure
 
-The `/image_downloaders` folder contains tools for obtaining two types of images:
-- iNaturalist host tree images
-- Google Street View panoramic images
+- `/image_downloaders`: scripts for downloading Street View, iNaturalist, and EDDMapS imagery.
+- `/tree_detection`: YOLOv5-based tree detection model configuration and training artifacts.
+- `/tree_classification`: CNN-based host tree genus classification workflow (preprocess/train/evaluate).
+- `/tree_geolocation`: end-to-end geolocation workflow combining detection, classification, and depth estimates.
+- `/tree_inventory`: utilities for reconciling model outputs with city inventory data.
 
-## Tree Classification
+## Reproducible Setup
 
-In the `/tree_classification` folder, you'll find scripts for developing and evaluating a convolutional neural network (CNN) tailored for host tree classification.
+1. Create and activate a Python environment.
+2. Install dependencies:
+   - `pip install -r requirements.txt`
+3. Set `PYTHONPATH` to the repository parent directory:
+   - `export PYTHONPATH=$PYTHONPATH:/path/to/parent_directory`
+4. Run module workflows using their JSON/YAML config files (see each module README).
 
-## Tree Detection
+## Typical Workflow
 
-The `/tree_detection` folder houses scripts to apply a pre-trained object detection model (YOLOv5) to identify trees in Google Street View panoramic images.
+1. Download imagery and metadata (`/image_downloaders`).
+2. Detect trees in panoramas (`/tree_detection`).
+3. Classify detected trees (`/tree_classification`).
+4. Geolocate trees from multi-view imagery (`/tree_geolocation`).
+5. Join model outputs with city inventories (`/tree_inventory`).
 
-## Tree Geolocation
+## Citation
 
-The `/tree_geolocation` folder contains scripts that integrate detection and classification models into a workflow. This workflow triangulates and assigns geolocation coordinates to street trees.
+If this repository contributes to your work, please cite:
+
+Thomas A. Lake, *Continental-scale computer vision models reveal generalizable patterns and pitfalls for urban tree inventories with street-view images*, ISPRS Open Journal of Photogrammetry and Remote Sensing, https://doi.org/10.1016/j.ophoto.2026.100122.
 
 ![Example Tree Detection](https://github.com/ncsu-landscape-dynamics/gsv_host_detector/blob/main/yolov5-prediction-sample-tree.jpg?raw=true)
-
